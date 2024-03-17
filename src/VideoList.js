@@ -4,14 +4,14 @@ export const VideoList = (props) => {
     console.log("pros",props)
     const renderList=()=>{
         var list= props.videos.map(video=>{
-            return  <li style={{cursor:"pointer"}} onClick={()=>{props.updateSelectedVideo(video)}} key={video.etag}><img src={video.snippet.thumbnails.medium.url}/></li>
+            return  <li style={{cursor:"pointer",borderRadius:"3vh"}} onClick={()=>{props.updateSelectedVideo(video)}} key={video.etag}><img src={video.snippet.thumbnails.medium.url}/></li>
         })
         return list;
     }
   return (
     <div>
         <h1>VideoList</h1>
-        <ul style={{listStyleType:'none'}}>
+        <ul style={{listStyleType:'none',display:"flex",flexDirection:'column',gap:"5vh"}}>
         {renderList()}
         </ul>
     </div>
