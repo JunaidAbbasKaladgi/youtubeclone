@@ -22,9 +22,12 @@ import { SearchBar } from './SearchBar';
 },[])
   return (
     <div>
+      <div style={{display:'flex',gap:"40vh"}}>
+      <img style={{width:"200px",height:"90px"}} src="https://t3.ftcdn.net/jpg/03/00/38/90/360_F_300389025_b5hgHpjDprTySl8loTqJRMipySb1rO0I.jpg" alt="" />
       <SearchBar queryCollector={(query)=>{
         makeAPICall(query)
       }}></SearchBar>
+      </div>
          <div className="" style={{display:'flex',gap:"10vh",marginLeft:"10vh",marginTop:"2vh"}}>
          <Videoplayer selectedVideo={selectedVideo}></Videoplayer>
         <VideoList updateSelectedVideo={(input)=>{updateSelectedVideo(input)}} videos={videos}></VideoList>
