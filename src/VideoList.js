@@ -1,22 +1,41 @@
-import React from 'react'
+import React from 'react';
 
 export const VideoList = (props) => {
-    console.log("pros",props)
-    const renderList=()=>{
-        var list= props.videos.map(video=>{
-            return  <li style={{cursor:"pointer",borderRadius:"3vh"}} onClick={()=>{props.updateSelectedVideo(video)}} key={video.etag}><img src={video.snippet.thumbnails.medium.url}/></li>
-        })
+
+    const renderList = () => {
+        var list = props.videos.map(video => {
+            return (
+                <>
+                    <div className=''>
+                        <li
+                            className="cursor-pointer flex rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow"
+                            onClick={() => props.updateSelectedVideo(video)}
+                            key={video.etag}
+                        >
+                            <img src={video.snippet.thumbnails.medium.url} alt="video thumbnail" className="w-[168px] h-[94]" />
+                            <div className='w-[200px]  h-[80px]'>
+                                <p className='font-semibold'>{video.snippet.title}</p>
+                            </div>
+                        </li>
+                       
+                    </div>
+                </>
+            );
+        });
         return list;
-    }
-  return (
-    <div>
-        <h1>VideoList</h1>
-        <ul style={{listStyleType:'none',display:"flex",flexDirection:'column',gap:"5vh"}}>
-        {renderList()}
-        </ul>
-    </div>
-  )
-}
+    };
+
+    return (
+        <div className=''>
+            <ul className="list-none flex flex-col gap-6">
+                {renderList()}
+            </ul>
+        </div>
+    );
+};
+
+
+
 /*      
 {
     "kind": "youtube#searchResult",

@@ -5,10 +5,12 @@ export const Videoplayer = (props) => {
         var VideoId=props.selectedVideo.id.videoId;
         var url=`https://www.youtube.com/embed/${VideoId}`
   return (
-    <div>
-       <iframe width="750px" height="400px" style={{borderRadius:"3vh"}} src={url}></iframe>
-       <h2>{props.selectedVideo.snippet.title}</h2>
+    <>
+    <div className='text-center w-[850px] h-[460px]'>
+       <iframe className='w-full rounded-lg h-full' src={url}></iframe><br />
+       <p className=' font-bold text-3xl'>{props.selectedVideo.snippet.title}</p>
     </div>
+    </>
   )
 }
 
