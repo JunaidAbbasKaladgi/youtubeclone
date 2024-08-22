@@ -8,13 +8,13 @@ export const VideoList = (props) => {
                 <>
                     <div className=''>
                         <li
-                            className="cursor-pointer flex rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow"
+                            className="cursor-pointer flex rounded-lg overflow-hidden shadow-md hover:shadow-lg ml-[12vh] transition-shadow"
                             onClick={() => props.updateSelectedVideo(video)}
                             key={video.etag}
                         >
-                            <img src={video.snippet.thumbnails.medium.url} alt="video thumbnail" className="w-[168px] h-[94]" />
-                            <div className='w-[200px]  h-[80px]'>
-                                <p className='font-semibold'>{video.snippet.title}</p>
+                            <img src={video.snippet.thumbnails.medium.url} alt="video thumbnail" className="md:w-[168px] w-[230px] md:h-[94]" />
+                            <div className='md:w-[200px]  md:h-[80px] w-[500px]'>
+                                <p className='font-semibold text-[22px]'>{video.snippet.title}</p>
                             </div>
                         </li>
                        

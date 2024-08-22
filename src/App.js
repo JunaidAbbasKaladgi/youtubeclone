@@ -25,7 +25,7 @@ import  SearchBar  from './SearchBar';
       <SearchBar queryCollector={(query)=>{
         makeAPICall(query)
       }}></SearchBar>
-         <div className=" mt-[2vh] ml-[10vh] gap-[2vh] flex">
+         <div className=" mt-[2vh] ml-[10vh] md:gap-[2vh] md:flex flex flex-col items-center justify-center gap-[12vh]">
          <Videoplayer selectedVideo={selectedVideo}></Videoplayer>
         <VideoList updateSelectedVideo={(input)=>{updateSelectedVideo(input)}} videos={videos}></VideoList>
         </div>
